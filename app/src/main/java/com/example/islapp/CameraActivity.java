@@ -1,9 +1,23 @@
 package com.example.islapp;
 
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.ImageDecoder;
+import android.graphics.Paint;
+import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,11 +32,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+
+import static java.security.AccessController.getContext;
+
 public class CameraActivity extends AppCompatActivity {
 
+    Uri img;
     TextView tv;
     Button upload;
     VideoView videoView;
+    AlphaClassifier alphaClassifier;
     ImageView imageView;
     final int CAMERA_CAPTURE = 1;
     private Uri picUri;
@@ -32,18 +56,13 @@ public class CameraActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_portal);
-
+        loadAlphaClassifier();
         tv = findViewById(R.id.textView);
         upload = findViewById(R.id.button);
         imageView=findViewById(R.id.imageView);
         videoView = findViewById(R.id.videoView);
-        String videopath = "android.resource://"+getPackageName() + "/" + R.raw.alphabet;
-        Uri uri = Uri.parse(videopath);
-        videoView.setVideoURI(uri);
+        videoView.setVideoPath("https://youtu.be/jonJuDhlx2g");
 
-        MediaController mediaController = new MediaController(this);
-        videoView.setMediaController(mediaController);
-        mediaController.setAnchorView(videoView);
 
         videoView.start();
 
@@ -56,55 +75,81 @@ public class CameraActivity extends AppCompatActivity {
             }
         });
     }
-
-    private void performCrop(){
+    private void loadAlphaClassifier() {
         try {
-            // call the standard crop action intent (the user device may not
-            // support it)
-            Intent cropIntent = new Intent("com.android.camera.action.CROP");
-            // indicate image type and Uri
-            cropIntent.setDataAndType(picUri, "image/*");
-            // set crop properties
-            cropIntent.putExtra("crop", "true");
-            // indicate aspect of desired crop
-            cropIntent.putExtra("aspectX", 2);
-            cropIntent.putExtra("aspectY", 1);
-            // indicate output X and Y
-            cropIntent.putExtra("outputX", 256);
-            cropIntent.putExtra("outputY", 256);
-            // retrieve data on return
-            cropIntent.putExtra("return-data", true);
-            // start the activity - we handle returning in onActivityResult
-            startActivityForResult(cropIntent, PIC_CROP);
-        }
-        // respond to users whose devices do not support the crop action
-        catch (ActivityNotFoundException anfe) {
-            Toast toast = Toast
-                    .makeText(this, "This device doesn't support the crop action!", Toast.LENGTH_SHORT);
-            toast.show();
+            alphaClassifier = AlphaClassifier.classifier(this.getAssets(), AlphaISLModelConfig.MODEL_FILENAME);
+        } catch (IOException e) {
+            //  Toast.makeText(this, "MNIST model couldn't be loaded. Check logs for details.", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
         }
     }
-
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {
-                Uri img = result.getUri();
-                tv.setText("Uploaded Succesfully!");
-                upload.setText("Check results");
-                videoView.setVisibility(View.GONE);
-                imageView.setVisibility(View.VISIBLE);
-                imageView.setImageURI(null);
-                imageView.setImageURI(img);
-                //From here you can load the image however you need to, I recommend using the Glide library
+                CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                Log.d("resulttok", "onActivityResult: ");
+                img = result.getUri();
 
-            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                Exception error = result.getError();
+                //Predict image
+                Bitmap image = null;
+                try {
+                    image = MediaStore.Images.Media.getBitmap(this.getContentResolver(),img);
+                } catch (IOException e) {
+                    Log.d("excentered", "onActivityResult: ");
+                    e.printStackTrace();
+                }
+                ByteArrayOutputStream str = new ByteArrayOutputStream();
+                image.compress(Bitmap.CompressFormat.JPEG, 100, str);
+                byte[] byteArray = str.toByteArray();
+                onImageCaptured(byteArray);
+
+           } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+               // Exception error = result.getError();
+
+            //
             }
         }
+    }
+
+    private void onImageCaptured(byte[] picture) {
+        Log.d("pichello", "onImageCaptured: hello");
+        Bitmap bitmap = BitmapFactory.decodeByteArray(picture, 0, picture.length);
+        Bitmap squareBitmap = ThumbnailUtils.extractThumbnail(bitmap, getScreenWidth1(), getScreenWidth1());
+        Log.d("h3ello", "onImageCaptured: ");
+
+        Bitmap preprocessedImage = ImageUtils.prepareImageForClassification(squareBitmap);
+        Log.d("h1ello", "onImageCaptured: ");
+        float[][] recognitions = alphaClassifier.recognizeImage(preprocessedImage);
+        Log.d("h2ello", "onImageCaptured: "+recognitions);
+        // tv.setText("Plastic");
+        // rate.setText("5");
+        Log.d("hello", "onImageCaptured: ");
+        int i;
+        float max=0;
+        int index=0;
+        for(i = 0;i<35;i++)
+        {
+            Log.d("looparr", "onImageCaptured: "+recognitions[0][i]);
+            if(recognitions[0][i]>max) {
+                max=recognitions[0][i];
+                index=i;
+                //break;
+            }
+        }
+        videoView.setVisibility(View.GONE);
+        imageView.setVisibility(View.VISIBLE);
+        imageView.setImageURI(null);
+        imageView.setImageURI(img);
+        tv.setText(AlphaISLModelConfig.OUTPUT_LABELS.get(index).toString());
+    }
+
+
+    private int getScreenWidth1() {
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        (this).getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        return displayMetrics.widthPixels;
     }
 
 }

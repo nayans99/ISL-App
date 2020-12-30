@@ -29,7 +29,7 @@ public class PortalActivity extends AppCompatActivity {
         upload = findViewById(R.id.button);
 
         VideoView videoView = findViewById(R.id.videoView);
-        String videopath = "android.resource://"+getPackageName() + "/" + R.raw.alphabet;
+        String videopath = "android.resource://"+getPackageName() + "/";
         Uri uri = Uri.parse(videopath);
         videoView.setVideoURI(uri);
 
@@ -48,7 +48,6 @@ public class PortalActivity extends AppCompatActivity {
             }
         });
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -62,7 +61,6 @@ public class PortalActivity extends AppCompatActivity {
                          upload.setText("Check results");
                 }
             });
-
             VideoView videoView = new VideoView(this);
             videoView.setVideoURI(data.getData());
             videoView.start();
