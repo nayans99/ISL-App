@@ -19,14 +19,6 @@ import com.example.islapp.Pojo.CustomPojo;
 
 import java.util.ArrayList;
 
-/**
- * Authuor: Hari vignesh Jayapalan
- * Created on: 6 Feb 2016
- * Email: hariutd@gmail.com
- * <p>
- * Implementing custom RecyclerView Adapter
- * Tutorial @ https://medium.com/@harivigneshjayapalan
- */
 public class MainActivity1 extends AppCompatActivity {
     private final ArrayList<CustomPojo> listContentArr = new ArrayList<>();
     //Declare the Adapter, AecyclerView and our custom ArrayList

@@ -2,14 +2,6 @@ package com.example.islapp.Pojo;
 
 import java.util.ArrayList;
 
-/**
- * Authuor: Hari vignesh Jayapalan
- * Created on: 6 Feb 2016
- * Email: hariutd@gmail.com
- * <p>
- * Implementing custom RecyclerView Adapter
- * Tutorial @ https://medium.com/@harivigneshjayapalan
- */
 public class CustomPojo {
 
     private final ArrayList<CustomPojo> customPojo = new ArrayList<>();
