@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         ll = (LinearLayout) findViewById(R.id.ll);
         mycard = (CardView) findViewById(R.id.bankcardId);
-        i = new Intent(this, CameraActivity.class);
+        i = new Intent(this, MainActivity1.class);
         mycard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
