@@ -22,11 +22,12 @@
         <activity android:name="com.example.islapp.ae" />
         <activity android:name="com.example.islapp.PortalActivity" />
         <activity android:name="com.example.islapp.CameraActivity" />
-        <activity android:name="com.example.islapp.login">
-
-        </activity>
-        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat"/>
+        <activity android:name="com.example.islapp.login"></activity>
+        <activity android:name=".A"></activity>
+        <activity android:name=".MainActivity1"></activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
         <activity
             android:name="com.example.islapp.LoginActivity"
             android:label="Trainer">
