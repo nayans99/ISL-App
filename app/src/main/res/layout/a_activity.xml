@@ -20,6 +20,13 @@
         android:background="@drawable/pic_border"
         tools:ignore="MissingConstraints" />
 
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        />
+
     <Button
         android:id="@+id/bu"
         android:layout_width="wrap_content"

@@ -143,7 +143,7 @@ public class CameraActivity extends AppCompatActivity {
         imageView.setImageURI(null);
         imageView.setImageURI(img);
         tv.setText(AlphaISLModelConfig.OUTPUT_LABELS.get(index).toString());
-    }
+}
 
 
     private int getScreenWidth1() {
