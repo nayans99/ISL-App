@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login">
+    tools:context=".RegisterActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,7 +15,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0.9"
-            android:src="#000000" />
+            android:src="#000000"
+            tools:ignore="ContentDescription" />
     </RelativeLayout>
 
     <LinearLayout
@@ -31,7 +32,8 @@
             android:layout_width="84dp"
             android:layout_height="84dp"
             android:layout_marginTop="100dp"
-            android:src="@drawable/ic_android_black_24dp" />
+            android:src="@drawable/ic_android_black_24dp"
+            tools:ignore="ContentDescription" />
 
         <EditText
 
@@ -40,11 +42,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="200dp"
             android:background="@drawable/gradienteditext"
-            android:drawableLeft="@drawable/ic_lightbulb_outline_black_24dp"
+            android:drawableStart="@drawable/ic_lightbulb_outline_black_24dp"
             android:drawablePadding="10dp"
             android:drawableTint="#fff"
             android:hint="Username/E-mail"
-            android:textColorHint="#fff" />
+            android:textColorHint="#fff"
+            tools:ignore="HardcodedText,TextFields" />
 
         <EditText
             android:id="@+id/pwd"
@@ -52,11 +55,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:background="@drawable/gradienteditext"
-            android:drawableLeft="@drawable/ic_lightbulb_outline_black_24dp"
+            android:drawableStart="@drawable/ic_lightbulb_outline_black_24dp"
             android:drawablePadding="10dp"
             android:drawableTint="#fff"
+            android:inputType="textPassword"
             android:hint="Password"
-            android:textColorHint="#fff" />
+            android:textColorHint="#fff"
+            tools:ignore="Autofill,HardcodedText" />
 
         <Button
             android:id="@+id/a1"
@@ -64,10 +69,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:background="@drawable/gradienteditext"
-            android:drawableRight="@drawable/ic_attach_money_black_24dp"
+            android:drawableEnd="@drawable/ic_attach_money_black_24dp"
             android:foreground="?android:attr/selectableItemBackground"
             android:text="Register"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            tools:ignore="HardcodedText" />
 
     </LinearLayout>
 </RelativeLayout>

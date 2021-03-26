@@ -11,7 +11,7 @@
     <color name="darkblue">#23283a</color>
     <color name="testcolorblue">#152b38</color>
     <color name="pink">#fe104d</color>
-
+    <color name="GoogleTextColor">#444444</color>
     <color name="colorPrimary1">#278be3</color>
     <color name="colorPrimaryDark1">#0f5998</color>
     <color name="colorAccent1">#4075a2</color>
