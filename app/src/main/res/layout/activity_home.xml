@@ -36,13 +36,13 @@
                     android:layout_height="64dp"
                     android:background="@drawable/cerclebackgroundpurple"
                     android:padding="10dp"
-                    android:src="@drawable/ic_attach_money_black_24dp" />
+                    android:src="@mipmap/numbes" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Task A"
+                    android:text="Numbers"
                     android:textStyle="bold" />
 
                 <View
@@ -56,7 +56,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="Description of Task A"
+                    android:text="Click to test your number sign language proficiency"
                     android:textColor="@android:color/darker_gray" />
 
             </LinearLayout>
@@ -66,6 +66,7 @@
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp"
+            android:id="@+id/c1"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground">
 
@@ -80,13 +81,13 @@
                     android:layout_height="64dp"
                     android:background="@drawable/cerclebackgroundpink"
                     android:padding="10dp"
-                    android:src="@drawable/ic_lightbulb_outline_black_24dp" />
+                    android:src="@drawable/ic_font_download_24px" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Task B"
+                    android:text="Alphabets"
                     android:textStyle="bold" />
 
                 <View
@@ -100,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="Description of Task B"
+                    android:text="Click to test your alphabet sign language proficiency"
                     android:textColor="@android:color/darker_gray" />
 
             </LinearLayout>
@@ -119,6 +120,7 @@
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp"
+            android:id="@+id/c2"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground">
 
@@ -133,13 +135,13 @@
                     android:layout_height="64dp"
                     android:background="@drawable/cerclebackgroundgreen"
                     android:padding="10dp"
-                    android:src="@drawable/ic_control_point_black_24dp" />
+                    android:src="@drawable/ic_words" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Task C"
+                    android:text="Words"
                     android:textStyle="bold" />
 
                 <View
@@ -153,7 +155,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="Description of Task C"
+                    android:text="Test your sign language against certain words"
                     android:textColor="@android:color/darker_gray" />
 
             </LinearLayout>
@@ -164,6 +166,7 @@
             android:layout_height="190dp"
             android:layout_margin="10dp"
             android:clickable="true"
+            android:id="@+id/c3"
             android:foreground="?android:attr/selectableItemBackground">
 
             <LinearLayout
@@ -177,13 +180,13 @@
                     android:layout_height="64dp"
                     android:background="@drawable/cerclebackgroundyello"
                     android:padding="10dp"
-                    android:src="@drawable/ic_attach_file_black_24dp" />
+                    android:src="@drawable/ic_chart" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Task D"
+                    android:text="Result"
                     android:textStyle="bold" />
 
                 <View
@@ -197,7 +200,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="Description of Task D"
+                    android:text="You may check your result here"
                     android:textColor="@android:color/darker_gray" />
 
             </LinearLayout>
@@ -215,6 +218,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="340dp"
             android:layout_height="150dp"
+            android:id="@+id/c4"
             android:layout_margin="10dp"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground">
@@ -231,13 +235,13 @@
                     android:layout_height="64dp"
                     android:background="@drawable/cerclebackgroundpurple"
                     android:padding="10dp"
-                    android:src="@drawable/ic_wifi_black_24dp" />
+                    android:src="@drawable/ic_person_black_18dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Task E"
+                    android:text="Profile"
                     android:textStyle="bold" />
 
                 <View
@@ -251,7 +255,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="Description of Task E"
+                    android:text="Your Profile"
                     android:textColor="@android:color/darker_gray" />
 
             </LinearLayout>

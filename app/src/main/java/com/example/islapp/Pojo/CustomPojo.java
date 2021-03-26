@@ -8,6 +8,7 @@ public class CustomPojo {
     //POJO class consists of get method and set method
     private String name;
     private String time, content;
+    private int i;
 
 
     public CustomPojo() {
@@ -38,6 +39,10 @@ public class CustomPojo {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setInt(int i) {
+        this.i = i;
     }
 
 }

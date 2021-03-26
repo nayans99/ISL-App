@@ -21,7 +21,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     MyViewHolder holder;
     //Creating an arraylist of POJO objects
     private ArrayList<CustomPojo> list_members = new ArrayList<>();
-
+    ArrayList<String> s = new ArrayList<>();
 
     public CustomAdapter(Context context) {
         this.context = context;
@@ -53,6 +53,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     }
 
+    public void setListContent1(ArrayList<String> list_members) {
+        this.s = list_members;
+        notifyItemRangeChanged(0, list_members.size());
+
+    }
+
 
     @Override
     public int getItemCount() {
@@ -72,9 +78,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         public MyViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
-            user_name = (TextView) itemView.findViewById(R.id.user_name);
-            content = (TextView) itemView.findViewById(R.id.content);
-            time = (TextView) itemView.findViewById(R.id.time);
+            user_name = itemView.findViewById(R.id.user_name);
+            content = itemView.findViewById(R.id.content);
+            time = itemView.findViewById(R.id.time);
 
         }
 

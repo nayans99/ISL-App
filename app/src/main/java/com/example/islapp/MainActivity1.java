@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,7 +33,7 @@ public class MainActivity1 extends AppCompatActivity {
         setContentView(R.layout.activity_main1);
 
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycleView);
+        recyclerView = findViewById(R.id.recycleView);
         //As explained in the tutorial, LineatLayoutManager tells the RecyclerView that the view
         //must be arranged in linear fashion
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -80,7 +82,8 @@ public class MainActivity1 extends AppCompatActivity {
         }
         //We set the array to the adapter
         adapter.setListContent(listContentArr);
-        recyclerView.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
+        DividerItemDecoration itemDecorator = new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.HORIZONTAL);
+        itemDecorator.setDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.line_divider));
         //We in turn set the adapter to the RecyclerView
         recyclerView.setAdapter(adapter);
     }

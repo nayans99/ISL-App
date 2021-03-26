@@ -9,19 +9,40 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthProvider;
+
 public class LoginActivity extends AppCompatActivity {
-    Button a;
+    Button a, b, c;
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    FirebaseAuth f;
+    FirebaseAuthProvider h;
+    private EditText mUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        f = FirebaseAuth.getInstance();
+        b = findViewById(R.id.a2);
+        c = findViewById(R.id.a3);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+            }
+        });
+        c.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, ForgotActivity.class));
+            }
+        });
         // Set up the login form.
-        a = (Button) findViewById(R.id.a1);
+        a = findViewById(R.id.a1);
         a.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

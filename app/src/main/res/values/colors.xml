@@ -12,10 +12,20 @@
     <color name="testcolorblue">#152b38</color>
     <color name="pink">#fe104d</color>
 
+    <color name="colorPrimary1">#278be3</color>
+    <color name="colorPrimaryDark1">#0f5998</color>
+    <color name="colorAccent1">#4075a2</color>
+    <color name="colorNavIcon">#dae9f6</color>
+    <color name="colorNavText">#01294b</color>
 
     <color name="colorPrimaryText">#212121</color>
     <color name="colorSecondaryText">#727272</color>
-
+    <color name="profilePrimaryDark">#FF3B30</color>
+    <color name="profileAccentColor">#F7F7F7</color>
+    <color name="whiteTextColor">#fff</color>
+    <color name="profileBackground">#fff</color>
+    <color name="blackTextColor">#000</color>
+    <color name="profileEditTextColor">#707070</color>
 
     <color name="black_overlay">#66000000</color>
 </resources>
