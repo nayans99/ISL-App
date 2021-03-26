@@ -2,8 +2,11 @@ package com.example.islapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -12,6 +15,10 @@ public class MainActivity extends AppCompatActivity {
     CardView mycard, c, c1, c2, c3, c4;
     Intent i;
     LinearLayout ll;
+    ProgressBar pbar;
+    TextView t;
+    int pStatus = 60;
+    Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,5 +54,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ProfileActivity.class));
             }
         });
+        pbar = findViewById(R.id.progressBar);
+        t = findViewById(R.id.txtProgress);
+
+        pbar.setProgress(pStatus);
+        String a = pStatus + "%";
+        t.setText(a);
+
+
     }
 }
