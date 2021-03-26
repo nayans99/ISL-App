@@ -19,25 +19,30 @@
         <TextView
             style="@style/headerText"
             android:layout_marginBottom="20dp"
-            android:text="Account Info" />
+            android:text="Account Info"
+            tools:ignore="HardcodedText" />
 
         <RelativeLayout style="@style/profileDetailsLayout">
 
             <ImageView
                 android:id="@+id/nameImageView"
                 style="@style/profileDetailsImage"
-                android:src="@drawable/ic_name" />
+                android:src="@drawable/ic_name"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/nameTextView"
                 style="@style/profileDetailsTextMain"
-                android:layout_toRightOf="@id/nameImageView"
-                android:text="Name" />
+                android:layout_toEndOf="@id/nameImageView"
+                android:text="Name"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 style="@style/profileDetailsMiniText"
-                android:layout_toRightOf="@id/nameImageView"
-                android:text="developer" />
+                android:id="@+id/nm"
+                android:layout_toEndOf="@id/nameImageView"
+                android:text="developer"
+                tools:ignore="HardcodedText" />
 
         </RelativeLayout>
 
@@ -48,17 +53,21 @@
             <ImageView
                 android:id="@+id/mobileImageView"
                 style="@style/profileDetailsImage"
-                android:src="@drawable/ic_mobile" />
+                android:src="@drawable/ic_mobile"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 style="@style/profileDetailsTextMain"
-                android:layout_toRightOf="@id/mobileImageView"
-                android:text="Mobile" />
+                android:layout_toEndOf="@id/mobileImageView"
+                android:text="Mobile"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 style="@style/profileDetailsMiniText"
-                android:layout_toRightOf="@id/mobileImageView"
-                android:text="+91-8129999999" />
+                android:id="@+id/mno"
+                android:layout_toEndOf="@id/mobileImageView"
+                android:text="-"
+                tools:ignore="HardcodedText" />
 
         </RelativeLayout>
 
@@ -69,17 +78,21 @@
             <ImageView
                 android:id="@+id/emailImageView"
                 style="@style/profileDetailsImage"
-                android:src="@drawable/ic_email" />
+                android:src="@drawable/ic_email"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 style="@style/profileDetailsTextMain"
-                android:layout_toRightOf="@id/emailImageView"
-                android:text="Email" />
+                android:layout_toEndOf="@id/emailImageView"
+                android:text="Email"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 style="@style/profileDetailsMiniText"
-                android:layout_toRightOf="@id/emailImageView"
-                android:text="developer@appsnipp.com" />
+                android:id="@+id/mail"
+                android:layout_toEndOf="@id/emailImageView"
+                android:text="developer@domain.com"
+                tools:ignore="HardcodedText" />
 
         </RelativeLayout>
 
@@ -90,17 +103,21 @@
             <ImageView
                 android:id="@+id/addressImageView"
                 style="@style/profileDetailsImage"
-                android:src="@drawable/ic_address" />
+                android:src="@drawable/ic_address"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 style="@style/profileDetailsTextMain"
-                android:layout_toRightOf="@id/addressImageView"
-                android:text="Address" />
+                android:layout_toEndOf="@id/addressImageView"
+                android:text="Address"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 style="@style/profileDetailsMiniText"
-                android:layout_toRightOf="@id/addressImageView"
-                android:text="Avenue 2nd Street NW SY." />
+                android:id="@+id/add"
+                android:layout_toEndOf="@id/addressImageView"
+                android:text="Avenue 2nd Street NW SY."
+                tools:ignore="HardcodedText" />
 
         </RelativeLayout>
 
@@ -111,17 +128,21 @@
             <ImageView
                 android:id="@+id/dobImageView"
                 style="@style/profileDetailsImage"
-                android:src="@drawable/ic_dob" />
+                android:src="@drawable/ic_dob"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 style="@style/profileDetailsTextMain"
-                android:layout_toRightOf="@id/dobImageView"
-                android:text="D.O.B" />
+                android:layout_toEndOf="@id/dobImageView"
+                android:text="D.O.B"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 style="@style/profileDetailsMiniText"
-                android:layout_toRightOf="@id/dobImageView"
-                android:text="12-05-1990" />
+                android:id="@+id/dob"
+                android:layout_toEndOf="@id/dobImageView"
+                android:text="12-05-1990"
+                tools:ignore="HardcodedText" />
 
         </RelativeLayout>
 

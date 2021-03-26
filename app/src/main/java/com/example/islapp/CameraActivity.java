@@ -1,17 +1,8 @@
 package com.example.islapp;
 
-import android.app.Activity;
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.content.res.AssetFileDescriptor;
-import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.ImageDecoder;
-import android.graphics.Paint;
 import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Bundle;
@@ -21,9 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.MediaController;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.annotation.Nullable;
@@ -33,12 +22,7 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
-
-import static java.security.AccessController.getContext;
 
 public class CameraActivity extends AppCompatActivity {
 
@@ -133,8 +117,8 @@ public class CameraActivity extends AppCompatActivity {
         {
             Log.d("looparr", "onImageCaptured: "+recognitions[0][i]);
             if(recognitions[0][i]>max) {
-                max=recognitions[0][i];
-                index=i;
+                max = recognitions[0][i]; //Use this for score!!!
+                index = i;
                 //break;
             }
         }
