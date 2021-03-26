@@ -31,7 +31,7 @@ public class A extends AppCompatActivity {
     Bundle b;
     Uri img;
     AlphaClassifier alphaClassifier;
-
+    int pos;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +42,7 @@ public class A extends AppCompatActivity {
         l = findViewById(R.id.text);
         b1 = findViewById(R.id.bu);
         b = getIntent().getExtras();
+        pos = b.getInt("pos");
         if (b.getInt("pos") == 0) {
             i.setImageResource(R.drawable.a);
         }
@@ -197,7 +198,11 @@ public class A extends AppCompatActivity {
                 //break;
             }
         }
-        l.setText(AlphaISLModelConfig.OUTPUT_LABELS.get(index).toString());
+        int score = (int) (recognitions[0][9+pos]*100);
+        String prediction = AlphaISLModelConfig.OUTPUT_LABELS.get(index).toString();
+        int predicted_score = (int) (recognitions[0][index]*100);
+        String current = AlphaISLModelConfig.OUTPUT_LABELS.get(9+pos).toString();
+        l.setText(prediction+" : "+predicted_score+" "+current+" : "+score);
     }
     private int getScreenWidth1() {
         DisplayMetrics displayMetrics = new DisplayMetrics();

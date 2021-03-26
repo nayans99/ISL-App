@@ -9,7 +9,6 @@ import java.util.List;
  */
 public class AlphaISLModelConfig {
     public static String MODEL_FILENAME = "model.tflite";
-
     public static final int INPUT_IMG_SIZE_WIDTH = 200;
     public static final int INPUT_IMG_SIZE_HEIGHT = 200;
     public static final int FLOAT_TYPE_SIZE = 4;
