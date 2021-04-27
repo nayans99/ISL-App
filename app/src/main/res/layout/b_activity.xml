@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <VideoView
+        android:id="@+id/v"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_margin="4dp"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:text="Test"
+            tools:ignore="HardcodedText,MissingConstraints" />
+
+        <Button
+            android:id="@+id/test1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="280dp"
+            tools:ignore="HardcodedText,MissingConstraints" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <VideoView
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        android:layout_margin="10dp" />
+</LinearLayout>

@@ -1,6 +1,7 @@
 package com.example.islapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.Menu;
@@ -47,9 +48,9 @@ public class WordsActivity extends AppCompatActivity {
                 //Values are passing to activity & to fragment as well
                 Toast.makeText(WordsActivity.this, "Single Click on position :" + position,
                         Toast.LENGTH_SHORT).show();
-//                Intent i = new Intent(WordsActivity.this, A.class);
-//                i.putExtra("pos", position);
-//                startActivity(i);
+                Intent i = new Intent(WordsActivity.this, B.class);
+                i.putExtra("pos", position);
+                startActivity(i);
             }
 
             @Override
@@ -71,10 +72,10 @@ public class WordsActivity extends AppCompatActivity {
          *  RecyclerView.
          * */
         //We set the array to the adapter
-        String[] w = {"ABC", "XYZ", "LMN", "PQR"};
-        for (int iter = 0; iter < w.length; iter++) {
+        String[] w = {"Accident", "Help", "Call"};
+        for (String s : w) {
             CustomPojo pojoObject = new CustomPojo();
-            pojoObject.setName(w[iter]);
+            pojoObject.setName(s);
             listContentArr.add(pojoObject);
         }
         //We set the array to the adapter

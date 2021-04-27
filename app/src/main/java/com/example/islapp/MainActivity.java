@@ -54,12 +54,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ProfileActivity.class));
             }
         });
-        pbar = findViewById(R.id.progressBar);
-        t = findViewById(R.id.txtProgress);
-
-        pbar.setProgress(pStatus);
-        String a = pStatus + "%";
-        t.setText(a);
+//        pbar = findViewById(R.id.progressBar);
+//       // t = findViewById(R.id.txtProgress);
+//
+//        pbar.setProgress(pStatus);
+//        String a = "Progress:"+ pStatus + "%";
+//        t.setText(a);
 
 
     }

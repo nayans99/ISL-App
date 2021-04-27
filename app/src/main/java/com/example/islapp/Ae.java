@@ -1,16 +1,15 @@
 package com.example.islapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.islapp.Adapter.CustomAdapter;
@@ -20,34 +19,106 @@ import java.util.ArrayList;
 
 public class Ae extends AppCompatActivity {
     private final ArrayList<CustomPojo> listContentArr = new ArrayList<>();
-    //Declare the Adapter, AecyclerView and our custom ArrayList
-    RecyclerView recyclerView;
+    //Declare the Adapter, RecyclerView and our custom ArrayList
+//    RecyclerView recyclerView;
     CustomAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ae);
+        Intent i = new Intent(Ae.this, A.class);
+        findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Ae.this, A.class);
+                i.putExtra("pos", "0");
+                startActivity(i);
+            }
+        });
+        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Ae.this, A.class);
+                i.putExtra("pos", "1");
+                startActivity(i);
+            }
+        });
+        findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                i.putExtra("pos", "2");
+                startActivity(i);
+            }
+        });
+        findViewById(R.id.button4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                i.putExtra("pos", "3");
+                startActivity(i);
+            }
+        });
+        findViewById(R.id.button5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                i.putExtra("pos", "4");
+                startActivity(i);
+            }
+        });
+        findViewById(R.id.button6).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                i.putExtra("pos", "5");
+                startActivity(i);
+            }
+        });
+        findViewById(R.id.button7).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                i.putExtra("pos", "6");
+                startActivity(i);
+            }
+        });
+        findViewById(R.id.button8).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                i.putExtra("pos", "7");
+                startActivity(i);
+            }
+        });
+        findViewById(R.id.button9).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                i.putExtra("pos", "8");
+                startActivity(i);
+            }
+        });
+        findViewById(R.id.button10).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                i.putExtra("pos", "9");
+                startActivity(i);
+            }
+        });
 
-
-        recyclerView = findViewById(R.id.recycleView);
+//        recyclerView = findViewById(R.id.recycleView);
         //As explained in the tutorial, LineatLayoutManager tells the RecyclerView that the view
         //must be arranged in linear fashion
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         /**
          * RecyclerView: Implementing single item click and long press (Part-II)
          * */
-        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(this,
+  /*      recyclerView.addOnItemTouchListener(new RecyclerTouchListener(this,
                 recyclerView, new ClickListener() {
             @Override
             public void onClick(View view, final int position) {
                 //Values are passing to activity & to fragment as well
                 Toast.makeText(Ae.this, "Single Click on position :" + position,
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_SHORT).show();*/
 //                Intent i = new Intent(Ae.this, A.class);
 //                i.putExtra("pos", position);
 //                startActivity(i);
-            }
+/*            }
 
             @Override
             public void onLongClick(View view, int position) {
@@ -58,31 +129,31 @@ public class Ae extends AppCompatActivity {
 
         adapter = new CustomAdapter(this);
         //Method call for populating the view
-        populateRecyclerViewValues();
+        populateRecyclerViewValues();*/
     }
-
-    private void populateRecyclerViewValues() {
-        /** This is where we pass the data to the adpater using POJO class.
-         *  The for loop here is optional. I've just populated same data for 50 times.
-         *  You can use a JSON object request to gather the required values and populate in the
-         *  RecyclerView.
-         * */
-        for (int iter = 0; iter <= 9; iter++) {
-            //Creating POJO class object
-            CustomPojo pojoObject = new CustomPojo();
-            //Values are binded using set method of the POJO class
-            pojoObject.setName(String.valueOf(iter));
-
-            //After setting the values, we add all the Objects to the array
-            //Hence, listConentArr is a collection of Array of POJO objects
-            listContentArr.add(pojoObject);
-        }
-        //We set the array to the adapter
-        adapter.setListContent(listContentArr);
-        recyclerView.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
-        //We in turn set the adapter to the RecyclerView
-        recyclerView.setAdapter(adapter);
-    }
+//
+//    private void populateRecyclerViewValues() {
+//        /** This is where we pass the data to the adpater using POJO class.
+//         *  The for loop here is optional. I've just populated same data for 50 times.
+//         *  You can use a JSON object request to gather the required values and populate in the
+//         *  RecyclerView.
+//         * */
+//        for (int iter = 0; iter <= 9; iter++) {
+//            //Creating POJO class object
+//            CustomPojo pojoObject = new CustomPojo();
+//            //Values are binded using set method of the POJO class
+//            pojoObject.setName(String.valueOf(iter));
+//
+//            //After setting the values, we add all the Objects to the array
+//            //Hence, listConentArr is a collection of Array of POJO objects
+//            listContentArr.add(pojoObject);
+//        }
+//        //We set the array to the adapter
+//        adapter.setListContent(listContentArr);
+//        recyclerView.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
+//        //We in turn set the adapter to the RecyclerView
+//        recyclerView.setAdapter(adapter);
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
