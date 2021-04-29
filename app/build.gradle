@@ -42,12 +42,13 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.cardview:cardview:1.0.0'
+    //noinspection GradleDynamicVersion
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.+'
-    implementation 'androidx.navigation:navigation-fragment:2.3.4'
-    implementation 'androidx.navigation:navigation-ui:2.3.4'
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
     implementation platform('com.google.firebase:firebase-bom:26.8.0')
     implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.firebase:firebase-auth:20.0.3'
+    implementation 'com.google.firebase:firebase-auth:20.0.4'
     testImplementation 'junit:junit:4.13.2'
     implementation('org.tensorflow:tensorflow-lite:2.4.0') { changing = true }
     implementation('org.tensorflow:tensorflow-lite-gpu:0.0.0-nightly') { changing = true }
@@ -58,13 +59,15 @@ dependencies {
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
      implementation 'com.android.support.constraint:constraint-layout:2.0.4'
-    compile 'com.mikhaellopez:circularprogressbar:1.0.0'
+    implementation 'com.mikhaellopez:circularprogressbar:1.0.0'
     testImplementation 'junit:junit:4.13.2'
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation "androidx.recyclerview:recyclerview:1.2.0"
     // For control over item selection of both touch and mouse driven selection
     implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
 }
 apply plugin: 'com.google.gms.google-services'

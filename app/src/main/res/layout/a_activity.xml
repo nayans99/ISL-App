@@ -6,35 +6,49 @@
     android:orientation="vertical"
     tools:context=".A">
 
-    <ImageView
-        android:id="@+id/imageView1"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:background="@drawable/pic_border"
-        tools:ignore="MissingConstraints" />
+        android:layout_height="wrap_content"
+        android:padding="10dp">
 
-    <ImageView
-        android:id="@+id/imageView2"
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/pic_border"
+            android:padding="10dp"
+            tools:ignore="ContentDescription,MissingConstraints" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:background="@drawable/pic_border"
-        tools:ignore="MissingConstraints" />
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/pic_border"
+            android:padding="10dp"
+            tools:ignore="ContentDescription,MissingConstraints" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <TextView
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/bu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="150dp"
-        android:layout_marginTop="50dp"
         android:text="TEST"
-        tools:ignore="MissingConstraints" />
-
+        tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded" />
 
 </LinearLayout>

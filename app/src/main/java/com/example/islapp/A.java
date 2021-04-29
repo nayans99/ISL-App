@@ -17,6 +17,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
@@ -44,82 +45,83 @@ public class A extends AppCompatActivity {
         b = getIntent().getExtras();
         pos = b.getInt("pos");
         if (b.getInt("pos") == 0) {
-            i.setImageResource(R.drawable.a);
+            //   i.setImage;
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fa.jpg?alt=media&token=89588175-e79a-47e8-a82f-182b981223ea").into(i);
         }
         if (b.getInt("pos") == 1) {
-            i.setImageResource(R.drawable.b);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fb.jpg?alt=media&token=a1e14e9d-20b7-4713-a874-74bfb02691df").into(i);
         }
         if (b.getInt("pos") == 2) {
-            i.setImageResource(R.drawable.c);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fc.jpg?alt=media&token=304f39dd-0749-4c9f-a12b-e59da38aa463").into(i);
         }
         if (b.getInt("pos") == 3) {
-            i.setImageResource(R.drawable.d);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fd.jpg?alt=media&token=74e67726-1703-4469-b9c0-3f0d8b225be0").into(i);
         }
         if (b.getInt("pos") == 4) {
-            i.setImageResource(R.drawable.e);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fe.jpg?alt=media&token=b4e6fce1-afa6-48ef-89e9-eea2a3eaa3f9").into(i);
         }
         if (b.getInt("pos") == 5) {
-            i.setImageResource(R.drawable.f);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Ff.jpg?alt=media&token=559a2f81-1652-4e26-8ad8-b5dcb7d87648").into(i);
         }
         if (b.getInt("pos") == 6) {
-            i.setImageResource(R.drawable.g);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fg.jpg?alt=media&token=309fc413-bcc6-4717-8b23-49cc4a42464a").into(i);
         }
         if (b.getInt("pos") == 7) {
-            i.setImageResource(R.drawable.h);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fh.jpg?alt=media&token=9070fe87-cf61-43a6-bd6e-9a477f9ff6dd").into(i);
         }
         if (b.getInt("pos") == 8) {
-            i.setImageResource(R.drawable.i);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fi.jpg?alt=media&token=04ef4fe1-daae-49d5-bda1-57dc2ed1685b").into(i);
         }
         if (b.getInt("pos") == 9) {
-            i.setImageResource(R.drawable.j);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fj.jpg?alt=media&token=19fe3ff4-ed5c-4d95-83b8-4d1bef8bfdc3").into(i);
         }
         if (b.getInt("pos") == 10) {
-            i.setImageResource(R.drawable.k);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fk.jpg?alt=media&token=456c61ad-3c62-4a69-859c-adcee0116d8a").into(i);
         }
         if (b.getInt("pos") == 11) {
-            i.setImageResource(R.drawable.l);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fl.jpg?alt=media&token=37cf6a0a-5f43-4e64-a8be-5917d38578ba").into(i);
         }
         if (b.getInt("pos") == 12) {
-            i.setImageResource(R.drawable.m);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fm.jpg?alt=media&token=9343fd63-3051-48a1-a9c4-01fbf3f80de0").into(i);
         }
         if (b.getInt("pos") == 13) {
-            i.setImageResource(R.drawable.n);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fn.jpg?alt=media&token=df443508-c1f7-4bd8-812c-b740d4df145c").into(i);
         }
         if (b.getInt("pos") == 14) {
-            i.setImageResource(R.drawable.o);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fo.jpg?alt=media&token=62df6906-a14e-413a-b30d-f3f914b758f1").into(i);
         }
         if (b.getInt("pos") == 15) {
-            i.setImageResource(R.drawable.p);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fp.jpg?alt=media&token=bc002675-10a5-4fe6-9b50-bc620ef7088a").into(i);
         }
         if (b.getInt("pos") == 16) {
-            i.setImageResource(R.drawable.q);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fq.jpg?alt=media&token=053a76f3-ae5b-4336-bda7-6e1231869a4f").into(i);
         }
         if (b.getInt("pos") == 17) {
-            i.setImageResource(R.drawable.r);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fr.jpg?alt=media&token=4f928a8a-9530-418b-b5ff-42a5ea122a31").into(i);
         }
         if (b.getInt("pos") == 18) {
-            i.setImageResource(R.drawable.s);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fs.jpg?alt=media&token=42a08240-498b-407e-803c-b6c6c8abac1c").into(i);
         }
         if (b.getInt("pos") == 19) {
-            i.setImageResource(R.drawable.t);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Ft.jpg?alt=media&token=49e9c625-3c83-48f5-ad61-06cb73c3f378").into(i);
         }
         if (b.getInt("pos") == 20) {
-            i.setImageResource(R.drawable.u);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fu.jpg?alt=media&token=74e5f71d-96f4-4669-9a08-760df8b1b677").into(i);
         }
         if (b.getInt("pos") == 21) {
-            i.setImageResource(R.drawable.v);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fv.jpg?alt=media&token=77bc7e66-5c46-4fa8-848a-92aec9e76fcf").into(i);
         }
         if (b.getInt("pos") == 22) {
-            i.setImageResource(R.drawable.w);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fw.jpg?alt=media&token=39999ee4-0250-43d9-832e-08a563271a73").into(i);
         }
         if (b.getInt("pos") == 23) {
-            i.setImageResource(R.drawable.x);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fx.jpg?alt=media&token=98d53df4-979b-4d7e-8aaf-6c5d37d92c67").into(i);
         }
         if (b.getInt("pos") == 24) {
-            i.setImageResource(R.drawable.y);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fy.jpg?alt=media&token=6261c7b9-ad11-465d-8b6c-95914ee014d0").into(i);
         }
         if (b.getInt("pos") == 25) {
-            i.setImageResource(R.drawable.z);
+            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/isl-knpy.appspot.com/o/Images%2Fz.jpg?alt=media&token=96021241-84fa-436b-a418-c8c9b021bdd5").into(i);
         }
         b1.setOnClickListener(new View.OnClickListener() {
             @Override

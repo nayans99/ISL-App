@@ -1,23 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
+    android:forceDarkAllowed="true"
     android:orientation="vertical"
-    tools:context=".MainActivity1">
+    tools:context=".Ae"
+    tools:ignore="UnusedAttribute">
 
+    <!--    <com.google.android.material.appbar.AppBarLayout-->
+    <!--        android:id="@+id/app_bar"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:fitsSystemWindows="true"-->
+    <!--        android:theme="@style/AppTheme.AppBarOverlay">-->
+
+
+    <!--    </com.google.android.material.appbar.AppBarLayout>-->
 
     <!--    <androidx.recyclerview.widget.RecyclerView-->
     <!--        android:id="@+id/recycleView"-->
     <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent" />-->
+    <!--        android:layout_height="match_parent" -->
+    <!--        />-->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:ignore="UselessLeaf">
+        tools:ignore="UselessParent">
 
         <GridLayout
+            android:id="@+id/GridLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:columnCount="3"
@@ -30,11 +44,11 @@
                 android:padding="5dp">
 
                 <Button
-                    android:id="@+id/accident"
+                    android:id="@+id/button1"
                     android:layout_width="350dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:text="Accident"
+                    android:text="0"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
@@ -47,11 +61,11 @@
                 android:padding="5dp">
 
                 <Button
-                    android:id="@+id/help"
+                    android:id="@+id/button2"
                     android:layout_width="350dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:text="Help"
+                    android:text="1"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
@@ -64,103 +78,137 @@
                 android:padding="5dp">
 
                 <Button
-                    android:id="@+id/call"
+                    android:id="@+id/button3"
                     android:layout_width="350dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:text="Call"
+                    android:gravity="center"
+                    android:text="2"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
             <androidx.coordinatorlayout.widget.CoordinatorLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="90dp"
                 android:layout_columnWeight="1"
                 android:padding="5dp">
 
                 <Button
-                    android:id="@+id/doctor"
+                    android:id="@+id/button4"
                     android:layout_width="350dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:text="Doctor"
+                    android:gravity="center"
+                    android:text="3"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
             <androidx.coordinatorlayout.widget.CoordinatorLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="90dp"
                 android:layout_columnWeight="1"
                 android:padding="5dp">
 
                 <Button
-                    android:id="@+id/hot"
+                    android:id="@+id/button5"
                     android:layout_width="350dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:text="Hot"
+                    android:text="4"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
             <androidx.coordinatorlayout.widget.CoordinatorLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="90dp"
                 android:layout_columnWeight="1"
                 android:padding="5dp">
 
                 <Button
-                    android:id="@+id/lose"
+                    android:id="@+id/button6"
                     android:layout_width="350dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:text="Lose"
+                    android:text="5"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
             <androidx.coordinatorlayout.widget.CoordinatorLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="90dp"
                 android:layout_columnWeight="1"
                 android:padding="5dp">
 
                 <Button
-                    android:id="@+id/pain"
+                    android:id="@+id/button7"
                     android:layout_width="350dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:text="Pain"
+                    android:text="6"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
             <androidx.coordinatorlayout.widget.CoordinatorLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="90dp"
                 android:layout_columnWeight="1"
                 android:padding="5dp">
 
                 <Button
-                    android:id="@+id/thief"
+                    android:id="@+id/button8"
                     android:layout_width="350dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:text="Thief"
+                    android:text="7"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_columnWeight="1"
+                android:padding="5dp">
 
+                <Button
+                    android:id="@+id/button9"
+                    android:layout_width="350dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:text="8"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="0dp"
+                android:layout_height="95dp"
+                android:layout_columnWeight="1"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/button10"
+                    android:layout_width="350dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:text="9"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
         </GridLayout>
-    </ScrollView>
 
+    </ScrollView>
 </LinearLayout>

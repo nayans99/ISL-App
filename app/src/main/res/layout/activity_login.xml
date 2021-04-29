@@ -41,13 +41,13 @@
             android:layout_marginTop="100dp"
             android:background="@drawable/rounded_corners"
             android:drawableStart="@drawable/google_icon"
-            android:drawableLeft="@drawable/google_icon"
             android:drawablePadding="8dp"
             android:padding="8dp"
             android:text="Sign in with Google"
             android:textAllCaps="false"
             android:textColor="@color/GoogleTextColor"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,ObsoleteLayoutParam" />
 
         <EditText
             android:drawableStart="@drawable/ic_lightbulb_outline_black_24dp"

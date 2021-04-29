@@ -1,96 +1,55 @@
 package com.example.islapp;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.islapp.Adapter.CustomAdapter;
-import com.example.islapp.Pojo.CustomPojo;
-
-import java.util.ArrayList;
 
 public class WordsActivity extends AppCompatActivity {
-    private final ArrayList<CustomPojo> listContentArr = new ArrayList<>();
-    ArrayList<String> words = new ArrayList<>();
-    //Declare the Adapter, AecyclerView and our custom ArrayList
-    RecyclerView recyclerView;
-    CustomAdapter adapter;
+    Button a, b, c, d, e, f, g;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_words);
-
-
-        recyclerView = findViewById(R.id.recycleView);
-        //As explained in the tutorial, LineatLayoutManager tells the RecyclerView that the view
-        //must be arranged in linear fashion
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        /**
-         * RecyclerView: Implementing single item click and long press (Part-II)
-         * */
-        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(this,
-                recyclerView, new ClickListener() {
+        Intent i = new Intent(WordsActivity.this, B.class);
+        a = findViewById(R.id.accident);
+        a.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view, final int position) {
-                //Values are passing to activity & to fragment as well
-                Toast.makeText(WordsActivity.this, "Single Click on position :" + position,
-                        Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(WordsActivity.this, B.class);
-                i.putExtra("pos", position);
+            public void onClick(View view) {
+                i.putExtra("pos", 0);
                 startActivity(i);
             }
-
+        });
+        b = findViewById(R.id.help);
+        b.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onLongClick(View view, int position) {
-                Toast.makeText(WordsActivity.this, "Long press on position :" + position,
-                        Toast.LENGTH_LONG).show();
+            public void onClick(View view) {
+                i.putExtra("pos", 1);
+                startActivity(i);
             }
-        }));
-
-        adapter = new CustomAdapter(this);
-        //Method call for populating the view
-        populateRecyclerViewValues();
-    }
-
-    private void populateRecyclerViewValues() {
-        /** This is where we pass the data to the adpater using POJO class.
-         *  The for loop here is optional. I've just populated same data for 50 times.
-         *  You can use a JSON object request to gather the required values and populate in the
-         *  RecyclerView.
-         * */
-        //We set the array to the adapter
-        String[] w = {"Accident", "Help", "Call"};
-        for (String s : w) {
-            CustomPojo pojoObject = new CustomPojo();
-            pojoObject.setName(s);
-            listContentArr.add(pojoObject);
-        }
-        //We set the array to the adapter
-        adapter.setListContent(listContentArr);
-
-        DividerItemDecoration itemDecorator = new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.HORIZONTAL);
-        itemDecorator.setDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.line_divider));
-        //We in turn set the adapter to the RecyclerView
-        recyclerView.setAdapter(adapter);
+        });
+        c = findViewById(R.id.doctor);
+        d = findViewById(R.id.hot);
+        e = findViewById(R.id.lose);
+        f = findViewById(R.id.pain);
+        g = findViewById(R.id.call);
+        g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                i.putExtra("pos", 2);
+                startActivity(i);
+            }
+        });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -107,70 +66,4 @@ public class WordsActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-    /**
-     * RecyclerView: Implementing single item click and long press (Part-II)
-     * <p>
-     * - creating an Interface for single tap and long press
-     * - Parameters are its respective view and its position
-     */
-
-    public interface ClickListener {
-        void onClick(View view, int position);
-
-        void onLongClick(View view, int position);
-    }
-
-    /**
-     * RecyclerView: Implementing single item click and long press (Part-II)
-     * <p>
-     * - creating an innerclass implementing RevyvlerView.OnItemTouchListener
-     * - Pass clickListener interface as parameter
-     */
-
-    class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
-
-        private final ClickListener clicklistener;
-        private final GestureDetector gestureDetector;
-
-        public RecyclerTouchListener(Context context, final RecyclerView recycleView, final ClickListener clicklistener) {
-
-            this.clicklistener = clicklistener;
-            gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
-                @Override
-                public boolean onSingleTapUp(MotionEvent e) {
-                    return true;
-                }
-
-                @Override
-                public void onLongPress(MotionEvent e) {
-                    View child = recycleView.findChildViewUnder(e.getX(), e.getY());
-                    if (child != null && clicklistener != null) {
-                        clicklistener.onLongClick(child, recycleView.getChildAdapterPosition(child));
-                    }
-                }
-            });
-        }
-
-        @Override
-        public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
-            View child = rv.findChildViewUnder(e.getX(), e.getY());
-            if (child != null && clicklistener != null && gestureDetector.onTouchEvent(e)) {
-                clicklistener.onClick(child, rv.getChildAdapterPosition(child));
-            }
-
-            return false;
-        }
-
-        @Override
-        public void onTouchEvent(RecyclerView rv, MotionEvent e) {
-
-        }
-
-        @Override
-        public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
-        }
-    }
-
 }
