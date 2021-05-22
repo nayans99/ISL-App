@@ -31,73 +31,73 @@ public class Ae extends AppCompatActivity {
         findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Ae.this, A.class);
-                i.putExtra("pos", "0");
-                startActivity(i);
+//                Intent i = new Intent(Ae.this, A.class);
+//                i.putExtra("pos", "0");
+//                startActivity(i);
             }
         });
         findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Ae.this, A.class);
-                i.putExtra("pos", "1");
-                startActivity(i);
+//                Intent i = new Intent(Ae.this, A.class);
+//                i.putExtra("pos", "1");
+//                startActivity(i);
             }
         });
         findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                i.putExtra("pos", "2");
-                startActivity(i);
+//                i.putExtra("pos", "2");
+//                startActivity(i);
             }
         });
         findViewById(R.id.button4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                i.putExtra("pos", "3");
-                startActivity(i);
+//                i.putExtra("pos", "3");
+//                startActivity(i);
             }
         });
         findViewById(R.id.button5).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                i.putExtra("pos", "4");
-                startActivity(i);
+//                i.putExtra("pos", "4");
+//                startActivity(i);
             }
         });
         findViewById(R.id.button6).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                i.putExtra("pos", "5");
-                startActivity(i);
+//                i.putExtra("pos", "5");
+//                startActivity(i);
             }
         });
         findViewById(R.id.button7).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                i.putExtra("pos", "6");
-                startActivity(i);
+//                i.putExtra("pos", "6");
+//                startActivity(i);
             }
         });
         findViewById(R.id.button8).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                i.putExtra("pos", "7");
-                startActivity(i);
+//                i.putExtra("pos", "7");
+//                startActivity(i);
             }
         });
         findViewById(R.id.button9).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                i.putExtra("pos", "8");
-                startActivity(i);
+//                i.putExtra("pos", "8");
+//                startActivity(i);
             }
         });
         findViewById(R.id.button10).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                i.putExtra("pos", "9");
-                startActivity(i);
+//                i.putExtra("pos", "9");
+//                startActivity(i);
             }
         });
 

@@ -20,6 +20,7 @@
 
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher123"
+
         android:label="ISL"
         android:roundIcon="@mipmap/ic_launcher123_round"
         android:supportsRtl="true"
