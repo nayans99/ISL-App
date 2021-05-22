@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -43,7 +44,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         CustomPojo list_items = list_members.get(position);
         holder.user_name.setText(list_items.getName());
         holder.content.setText(list_items.getContent());
-        holder.time.setText(list_items.getTime());
+        if(list_items.isDone())
+            holder.done_img.setImageResource(R.drawable.tick);
     }
 
     //Setting the arraylist
@@ -73,14 +75,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     //View holder class, where all view components are defined
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView user_name, content, time;
+        TextView user_name, content;
+        ImageView done_img;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
             user_name = itemView.findViewById(R.id.user_name);
             content = itemView.findViewById(R.id.content);
-            time = itemView.findViewById(R.id.time);
+            done_img = itemView.findViewById(R.id.done);
 
         }
 

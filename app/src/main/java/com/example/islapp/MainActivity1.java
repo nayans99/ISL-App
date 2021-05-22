@@ -26,13 +26,12 @@ public class MainActivity1 extends AppCompatActivity {
     //Declare the Adapter, AecyclerView and our custom ArrayList
     RecyclerView recyclerView;
     CustomAdapter adapter;
-
+    public int[] complete;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main1);
-
-
+        complete = new int[]{0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0,1,0,0,1};
         recyclerView = findViewById(R.id.recycleView);
         //As explained in the tutorial, LineatLayoutManager tells the RecyclerView that the view
         //must be arranged in linear fashion
@@ -75,7 +74,11 @@ public class MainActivity1 extends AppCompatActivity {
             CustomPojo pojoObject = new CustomPojo();
             //Values are binded using set method of the POJO class
             pojoObject.setName(String.valueOf((char) iter));
-
+            int in = iter-65;
+            if(complete[in] == 1)
+                pojoObject.setDone(true);
+            else
+                pojoObject.setDone(false);
             //After setting the values, we add all the Objects to the array
             //Hence, listConentArr is a collection of Array of POJO objects
             listContentArr.add(pojoObject);
@@ -84,6 +87,7 @@ public class MainActivity1 extends AppCompatActivity {
         adapter.setListContent(listContentArr);
         DividerItemDecoration itemDecorator = new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.HORIZONTAL);
         itemDecorator.setDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.line_divider));
+
         //We in turn set the adapter to the RecyclerView
         recyclerView.setAdapter(adapter);
     }

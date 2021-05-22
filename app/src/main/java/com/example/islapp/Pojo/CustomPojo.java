@@ -10,6 +10,15 @@ public class CustomPojo {
     private String time, content;
     private int i;
 
+    public boolean isDone() {
+        return done;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
+    }
+
+    private boolean done;
 
     public CustomPojo() {
 
