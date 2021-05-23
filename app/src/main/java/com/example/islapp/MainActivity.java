@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         c3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(MainActivity.this, ResultActivity.class));
             }
         });
 //        pbar = findViewById(R.id.progressBar);
@@ -68,7 +68,5 @@ public class MainActivity extends AppCompatActivity {
 //        pbar.setProgress(pStatus);
 //        String a = "Progress:"+ pStatus + "%";
 //        t.setText(a);
-
-
     }
 }

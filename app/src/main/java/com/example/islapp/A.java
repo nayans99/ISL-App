@@ -24,6 +24,7 @@ import com.theartofdev.edmodo.cropper.CropImageView;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
+
 public class A extends AppCompatActivity {
     ImageView i, j;
     Button b1;
@@ -32,11 +33,9 @@ public class A extends AppCompatActivity {
     Uri img;
     AlphaClassifier alphaClassifier;
     int pos;
-    boolean next;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        next = false;
         setContentView(R.layout.a_activity);
         loadAlphaClassifier();
         i = findViewById(R.id.imageView1);
@@ -127,17 +126,9 @@ public class A extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(next)
-                {
-                    Intent i = new Intent(A.this, A.class);
-                    i.putExtra("pos", pos+1);
-                    startActivity(i);
-                }
-                else {
-                    CropImage.activity()
-                            .setGuidelines(CropImageView.Guidelines.ON)
-                            .start(A.this);
-                }
+                CropImage.activity()
+                        .setGuidelines(CropImageView.Guidelines.ON)
+                        .start(A.this);
             }
         });
     }
@@ -213,15 +204,7 @@ public class A extends AppCompatActivity {
         String prediction = AlphaISLModelConfig.OUTPUT_LABELS.get(index).toString();
         int predicted_score = (int) (recognitions[0][index]*100);
         String current = AlphaISLModelConfig.OUTPUT_LABELS.get(9+pos).toString();
-        Log.d("precur", "onImageCaptured: "+prediction+current);
-        if(prediction.equals(current)) {
-            l.setText("Congratulations! You passed, move on to next!");
-            b1.setText("Next alphabet");
-            next = true;
-        }
-        else {
-            l.setText("Sorry, try again"+prediction);
-        }
+        l.setText(prediction + " : " + predicted_score + " " + current + " : " + score);
     }
     private int getScreenWidth1() {
         DisplayMetrics displayMetrics = new DisplayMetrics();

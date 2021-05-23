@@ -32,8 +32,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Alphabet" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".ForgotActivity" />
+        <activity android:name=".ResultActivity" />
         <activity android:name="com.example.islapp.Ae" />
         <activity android:name=".WordsActivity" />
         <activity android:name="ProfileActivity" />
